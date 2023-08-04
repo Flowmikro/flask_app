@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <title>{% block title %}Title{% endblock %}</title>
+</head>
+<body>
+<!--навбар-->
+<header>
+    <div class="navnav">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ url_for ('index') }}">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('info') }}">О нас</a>
+            </li>
+            <!--  <li class="nav-item">-->
+            <!--    <a class="nav-link" href="#">Link</a>-->
+            <!--  </li>-->
+            <!--  <li class="nav-item">-->
+            <!--    <a class="nav-link disabled" aria-disabled="true">Disabled</a>-->
+            </li>
+        </ul>
+    </div>    
+</header>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
