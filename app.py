@@ -12,17 +12,12 @@ class PostModel(db.Model):
     text = db.Column(db.Text, nullable=False)
 
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-
 @app.route('/info')
 def info():
     return render_template('info.html')
 
 
-@app.route('/post')
+@app.route('/')
 def post_list():
     posts = PostModel.query.all()
     return render_template('post_list.html', posts=posts)
