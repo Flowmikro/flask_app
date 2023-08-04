@@ -22,6 +22,12 @@ def info():
     return render_template('info.html')
 
 
+@app.route('/post')
+def post_list():
+    posts = PostModel.query.all()
+    return render_template('post_list.html', posts=posts)
+
+
 @app.route('/create', methods=['GET', 'POST'])
 def create():
     if request.method == 'POST':
